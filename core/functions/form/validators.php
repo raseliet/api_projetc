@@ -42,3 +42,22 @@ function validate_is_positive($field_value, &$field) {
         return true;
     }
 }
+//
+//function validate_age($field_input, &$field) {
+//    if (($field_input <19) &&  ($field_input > 100)) {
+//        $field['error'] = 'Neatitinka amžius!';
+//		return false;
+//    }
+//	
+//	return true;
+//}
+
+function validate_number_range($field_input, &$field, $params) {
+    
+     if (($field_input < $params['min']) ||  ($field_input > $params['max'])) {
+        $field['error'] = 'Blogas amžius!';
+        return false;
+    }
+    
+    return true;
+}

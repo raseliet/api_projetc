@@ -1,1 +1,1 @@
-<span>&copy; <?php print date('Y') ?>. Tyler Durden, all rights reserved.</span>
+<span>&copy; <?php print date('Y') ?>. <?php print $data['created_by']; ?>, all rights reserved.</span

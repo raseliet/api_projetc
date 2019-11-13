@@ -207,6 +207,7 @@ class FileDB  {
      * @param string $table
      * @param array $conditions
      * @return array
+     * sutikrinti su indeksu
      */
     public function getRowsWhere($table, $conditions) {
         $rows = [];
