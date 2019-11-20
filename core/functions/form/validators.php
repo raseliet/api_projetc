@@ -61,3 +61,16 @@ function validate_number_range($field_input, &$field, $params) {
     
     return true;
 }
+
+function validate_alphabet_only($field_value, &$field){
+$regex = '/[^a-zA-Z]/';
+
+if (preg_match($regex, $field_value) === 1) {
+    
+   $field['error'] = 'Įveskite tik raides!';
+  return false;
+}
+ 
+return true;
+}
+
