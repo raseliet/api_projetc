@@ -52,7 +52,7 @@ switch (get_form_action()) {
                             Galite prisijungti paspaudę <a href="/login.php">čia!</a>
                         </p>
                     <?php else: ?>
-                        <h1>Registruotis:</h1>
+                        <h1>Register:</h1>
 
                         <!-- Register Form -->
                         <?php print $form->render(); ?>

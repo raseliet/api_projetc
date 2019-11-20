@@ -18,6 +18,7 @@ nav {
 nav .link-wrapper {
     display: inline-block;
     padding: 5px;
+   
 }
 
 nav .link-wrapper.active {

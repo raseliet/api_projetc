@@ -55,7 +55,7 @@ function validate_is_positive($field_value, &$field) {
 function validate_number_range($field_input, &$field, $params) {
     
      if (($field_input < $params['min']) ||  ($field_input > $params['max'])) {
-        $field['error'] = 'Blogas amžius!';
+        $field['error'] = 'Neteisingai įvestas laukas!';
         return false;
     }
     

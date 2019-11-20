@@ -1,0 +1,32 @@
+              
+ .container {
+    max-width: 548px;
+}
+
+.navbar-container {
+    max-width: 548px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-flex {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.map {
+
+}
+
+.card {
+    margin: 0 0 10px;
+}
+
+
+

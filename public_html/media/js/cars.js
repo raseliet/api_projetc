@@ -1,10 +1,10 @@
 'use strict';
 
 const endpoints = {
-    get: 'api/participants/get.php',
-    create: 'api/participants/create.php',
-    update: 'api/participants/update.php',
-    delete: 'api/participants/delete.php'
+    get: 'api/cars/get.php',
+    create: 'api/cars/create.php',
+    update: 'api/cars/update.php',
+    delete: 'api/cars/delete.php'
 };
 
 /**
@@ -18,6 +18,7 @@ const endpoints = {
 function api(url, formData, success, fail) {
     fetch(url, {
         method: 'POST',
+        //form data yra duomenis kuriuos postinam
         body: formData
     }).then(response => response.json())
             .then(obj => {
@@ -104,6 +105,7 @@ const forms = {
             forms.ui.errors.show(this.elements.form(), errors);
         },
         fill: function (data) {
+            forms.ui.clear(forms.update.elements.form());
             forms.ui.fill(forms.update.elements.form(), data);
         },
         onCloseListener: function (e) {
@@ -137,6 +139,16 @@ const forms = {
 
             Object.keys(data).forEach(data_id => {
                 if (form[data_id]) {
+                    
+                    // Sukuriame papildoma funkcionaluma select'ui
+                    // Ieskome tokio option'o, kurio value atitiktų iš JSON'o gautą vertę
+                    const option = form.querySelector('option[value="' + data[data_id] + '"]');
+                    if (option) {
+                        // Jeigu toks option'as buvo rastas, jo parentui (pačiam select'ui)
+                        // nustatome vertę
+                        option.parentNode.value = data[data_id];
+                    }
+                    
                     const input = form.querySelector('input[name="' + data_id + '"]');
                     if (input) {
                         input.value = data[data_id];
@@ -145,7 +157,7 @@ const forms = {
             });
         },
         clear: function (form) {
-            var fields = form.querySelectorAll('[name]')
+            let fields = form.querySelectorAll('[name]')
             fields.forEach(field => {
                 field.value = '';
             });
@@ -153,7 +165,7 @@ const forms = {
         flash: {
             class: function (element, class_name) {
                 const prev = element.className;
-                
+
                 element.className += class_name;
                 setTimeout(function () {
                     element.className = prev;
@@ -191,7 +203,7 @@ const forms = {
                 const errors = form.querySelectorAll('.field-error');
                 if (errors) {
                     errors.forEach(node => {
-                        node.remove();                 
+                        node.remove();
                     });
                 }
             }
@@ -246,7 +258,7 @@ const table = {
         build: function (data) {
             const row = document.createElement('tr');
             row.setAttribute('data-id', data.id);
-
+//data bus objektas, o Object.keys(data)istraukia viska kaip masyva, o masyva galima foreachinti
             Object.keys(data).forEach(data_id => {
                 let td = document.createElement('td');
                 td.innerHTML = data[data_id];
@@ -341,6 +353,7 @@ const table = {
             success: function (data) {
                 let person_data = data[0];
                 forms.update.show();
+                
                 forms.update.fill(person_data);
             },
             fail: function (errors) {
@@ -366,3 +379,10 @@ const app = {
 
 // Launch App
 app.init();
+
+
+
+
+
+
+

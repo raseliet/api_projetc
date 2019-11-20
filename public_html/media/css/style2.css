@@ -1,0 +1,87 @@
+html {
+    font-size: 14px;
+}
+
+/* =============== HEADER =============== */
+
+header {
+    text-align: center;
+    background: black;
+
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 1,5rem;
+    padding: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+header div.right a:hover {
+    text-decoration: underline;
+}
+.wrapper {
+    padding: 0 10px;
+}
+
+.link-wrapper {
+    padding: 10px 0;
+}
+
+/* =============== FORM =============== */
+
+form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid grey;
+}
+form label span {
+    display: block;
+    padding-bottom: 10px;
+}
+
+form .field-wrapper {
+   margin-bottom: 15px; 
+}
+
+button {
+    padding: 10px 35px;
+    text-transform: uppercase;
+    background: brown;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+   
+    color: chocolate;
+    background: white;
+}
+@media only screen and (min-width: 750px)  {
+    .wrapper {
+        padding: 0;
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav div.right .link-wrapper {
+        display: inline-block;
+    }
+    nav div.right .link-wrapper :not(:last-child) {
+        margin-right: 10px;
+    }
+}
+

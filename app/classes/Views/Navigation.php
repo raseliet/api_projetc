@@ -9,28 +9,31 @@ class Navigation extends \Core\View {
     public function __construct($data = []) {
         parent::__construct($data);
 // kurioje pusėje, dedamas slašas po domeno ir pavadinimas Home
-        $this->addLink('left', '/', 'Home');
-        
+         $this->addLink('left', '/', 'Home');
+
+//        $this->addLink('left', '/', '<a  href="index.php"><img src="..//logo.jpg"  /></a>');
+
         if (App::$session->userLoggedIn()) {
             $user = App::$session->getUser();
-            $label = $user->getEmail();
+            $label = $user->getName();
             $this->addLink('right', '/logout.php', "Logout($label)");
             //linkas puslapio ir id puslapio i kuri kreipia
-            $this->addLink('right', '/index.php#about', "About");
+             $this->addLink('right', '/cars.php', 'Cars');
+            $this->addLink('right', '/index.php', "About");
         } else {
-             $this->addLink('right', 'https://google.lt', 'About google');
-            $this->addLink('right', '/login.php', 'Prisijungti');
-            $this->addLink('right', '/register.php', 'Registruotis');            
+            $this->addLink('right', '/login.php', 'Login');
+            $this->addLink('right', '/register.php', 'Register');
+           
         }
     }
 
     public function addLink($section, $url, $title) {
         $link = ['url' => $url, 'title' => $title];
-        
+
         if ($_SERVER['REQUEST_URI'] == $link['url']) {
             $link['active'] = true;
         }
-        
+
         $this->data[$section][] = $link;
     }
 
