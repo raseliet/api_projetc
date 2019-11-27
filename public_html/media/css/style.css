@@ -7,6 +7,7 @@ header {
     justify-content: center;
     align-items: center;    
     height: 70px;
+    /*max-width: 800px;*/
 }
 
 nav {
@@ -18,7 +19,7 @@ nav {
 nav .link-wrapper {
     display: inline-block;
     padding: 5px;
-   
+
 }
 
 nav .link-wrapper.active {
@@ -40,6 +41,7 @@ main {
     padding: 15px;
     box-sizing: border-box;
 }
+
 
 .block {
     border-bottom: 6px dotted #efefef;
@@ -112,7 +114,7 @@ form .message-wrapper {
 }
 
 form button {
-      transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 form.success button {
@@ -122,14 +124,59 @@ form.success button {
 
 form.success button:after {
     font-size: 20px;
-    content: '✔';
+    content: '�?�';
 }
 
 /* =============== FOOTER =============== */
 
 footer {
-    height: 50px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.optional {
+    color: red;
+    font-size: 0,7rem;
+}
+
+
+/* =============== HERO =============== */
+#hero {
+    display: flex;
+    background-image: url('../hero1.jpg');
+    background-position: center;
+    background-size: cover;
+ 
+ height: 300px; 
+   
+}
+ 
+  
+.hero-content {
+  width: 100%; 
+  position: relative;
+  top: -60px;
+  left: 0px;
+/*  background: rgba(255, 255, 255, 0.24);*/
+  text-align: center;
+  padding: 0px;
+}
+
+  .taxi {
+  width: 80%; 
+  position: relative;
+  top: 100px;
+  left: -60px;
+/*  background: rgba(255, 255, 255, 0.24);*/
+  text-align: center;
+  padding: 0px;
+}
+@media (max-width: 411px) {
+    #hero {
+ height: 150px; 
+   
+}
+
+
 }

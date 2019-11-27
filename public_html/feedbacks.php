@@ -3,68 +3,61 @@ require '../bootloader.php';
 
 use App\App;
 
-
-
-$createForm = new \App\Cars\Views\CreateForm();
-$updateForm = new \App\Cars\Views\UpdateForm();
+$createForm = new \App\Feedbacks\Views\CreateForm();
+$updateForm = new \App\Feedbacks\Views\UpdateForm();
 $navigation = new \App\Views\Navigation();
 $footer = new \App\Views\Footer();
 
 if (!App::$session->userLoggedIn()) {
+
     header('Location: /login.php');
+
 }
-
-//
-//$car = new Car([
-//    'manufacturer' => 'Audi',
-//    'model' => 'Q',
-//    'year' => 2001
-//]);
-//
-//var_dump($car);
-//
-//$carModel = new Model();
-////var_dump($carModel->insert($car));
-//var_dump($carModel->get());
-//
-
-
-
-
+//        $form['message'] = 'Norite parašyti komentarą? Užsiregistruokite!';
 
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Automobiliai</title>
+        <title>Atsiliepimai</title>
         <link rel="stylesheet" href="media/css/normalize.css">
         <link rel="stylesheet" href="media/css/milligram.min.css">
         <link rel="stylesheet" href="media/css/style.css">
+<!--        <link rel="stylesheet" href="media/css/mano.css.css">-->
+
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
     <body>
         <header>
-            <?php print $navigation->render(); ?>
+<?php print $navigation->render(); ?>
         </header>
 
         <main>
             <section class="wrapper">
                 <div class="block">
-                    <h1>Manage cars:</h1>                    
-                    <?php print $createForm->render(); ?>
+                    <h1>Atsiliepimai:</h1>                    
+            <?php print $createForm->render(); ?>
                 </div>
+
+<!--                <table>
+<tr><td>Name: <br><input type="text" name="name"/></td></tr>
+<tr><td colspan="2">Comment: </td></tr>
+<tr><td colspan="5"><textarea name="comment" rows="5" cols="50"></textarea></td>  </tr>
+<tr><td colspan="2"><input type="submit" name="submit" value="Comment"></td></tr>
+</table>-->
+
                 <div class="block">
-                    <div id="cars-table">
+                    <div id="feedbacks-table">
                         <table>
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Manufacturer</th>
-                                    <th>Model</th>
-                                    <th>Year</th>
-                                    <th>Delete</th>
-                                    <th>Edit</th>
+                                    <th>Vardas</th>
+                                    <th>Komentaras</th>
+                                    <th>Data</th>
+                                    <th>Ištrinti</th>
+                                    <th>Redaguoti</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,18 +72,18 @@ if (!App::$session->userLoggedIn()) {
             <div id="update-modal" class="modal">
                 <div class="wrapper">
                     <span class="close">&times;</span>
-                    <?php print $updateForm->render(); ?>
+<?php print $updateForm->render(); ?>
                 </div>
             </div>            
         </main>
 
         <!-- Footer -->        
         <footer>
-            <?php print $footer->render(); ?>
+                    <?php print $footer->render(); ?>
         </footer>
 
 <!--        <script defer src="media/js/cars.js"></script>-->
-                <script defer src="media/js/cars1.js"></script>
+        <script defer src="media/js/cars1.js"></script>
 
     </body>
 </html>

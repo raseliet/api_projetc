@@ -6,6 +6,8 @@
                     <?php foreach ($section as $nav_id => $link): ?>
                         <div class="link-wrapper <?php print ($link['active'] ?? false) ? 'active' : ''; ?>">
                             <a href="<?php print $link['url']; ?>">
+                                
+
                                 <?php print $link['title']; ?>
                             </a>
                         </div>

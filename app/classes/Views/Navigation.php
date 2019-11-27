@@ -8,22 +8,18 @@ class Navigation extends \Core\View {
 
     public function __construct($data = []) {
         parent::__construct($data);
-// kurioje pusėje, dedamas slašas po domeno ir pavadinimas Home
-         $this->addLink('left', '/', 'Home');
 
-//        $this->addLink('left', '/', '<a  href="index.php"><img src="..//logo.jpg"  /></a>');
+        $this->addLink('left', '/', 'Titulinis');
 
         if (App::$session->userLoggedIn()) {
             $user = App::$session->getUser();
             $label = $user->getName();
-            $this->addLink('right', '/logout.php', "Logout($label)");
-            //linkas puslapio ir id puslapio i kuri kreipia
-             $this->addLink('right', '/cars.php', 'Cars');
-            $this->addLink('right', '/index.php', "About");
+            $this->addLink('right', '/logout.php', "Atsijungti($label)");
+            $this->addLink('right', '/feedbacks.php', 'Atsiliepimai');
         } else {
-            $this->addLink('right', '/login.php', 'Login');
-            $this->addLink('right', '/register.php', 'Register');
-           
+            $this->addLink('right', '/feedbacks.php', 'Atsiliepimai');
+            $this->addLink('right', '/register.php', 'Registruotis');
+            $this->addLink('right', '/login.php', 'Prisijungti');
         }
     }
 

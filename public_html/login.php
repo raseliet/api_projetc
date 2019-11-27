@@ -10,10 +10,9 @@ $footer = new \App\Views\Footer();
 
 function form_success($filtered_input, &$form) {
     App::$session->login(
-            $filtered_input['email'],
-            $filtered_input['password']
+            $filtered_input['email'], $filtered_input['password']
     );
-    header('Location: ' . '/');
+    header('Location: ' . 'index.php');
 }
 
 switch (get_form_action()) {
@@ -22,9 +21,6 @@ switch (get_form_action()) {
         validate_form($filtered_input, $form->getData());
         break;
 }
-
-
-
 ?>
 <html>
     <head>
@@ -33,33 +29,31 @@ switch (get_form_action()) {
         <title>Login</title>
         <link rel="stylesheet" href="media/css/normalize.css">
         <link rel="stylesheet" href="media/css/milligram.min.css"> 
-     <link rel="stylesheet" href="media/css/style.css">
-<!--         <link rel="stylesheet" href="media/css/style2.css">-->
+        <link rel="stylesheet" href="media/css/style.css">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!--    <script defer src="media/js/app.js"></script>-->
     </head>
     <body>
         <!-- Header -->        
         <header>
-            <?php print $navigation->render(); ?>
+<?php print $navigation->render(); ?>
         </header>
 
         <!-- Main Content -->        
         <main>
             <section class="wrapper">
                 <div class="block">
-                    <h1>Login:</h1>
+                    <h1>Prisijungti:</h1>
 
                     <!-- Login Form -->
-                    <?php print $form->render(); ?>
+<?php print $form->render(); ?>
                 </div>
             </section>
         </main>
 
         <!-- Footer -->        
         <footer>
-            <?php print $footer->render(); ?>
+<?php print $footer->render(); ?>
         </footer>
     </body>
 </html>

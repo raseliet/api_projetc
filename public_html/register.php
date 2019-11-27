@@ -28,7 +28,7 @@ switch (get_form_action()) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Register</title>
+        <title>Registracija</title>
         <link rel="stylesheet" href="media/css/normalize.css">
         <link rel="stylesheet" href="media/css/milligram.min.css">
         <link rel="stylesheet" href="media/css/style.css">
@@ -52,7 +52,7 @@ switch (get_form_action()) {
                             Galite prisijungti paspaudę <a href="/login.php">čia!</a>
                         </p>
                     <?php else: ?>
-                        <h1>Register:</h1>
+                        <h1>Registracija:</h1>
 
                         <!-- Register Form -->
                         <?php print $form->render(); ?>

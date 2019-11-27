@@ -12,7 +12,7 @@ if (!App::$session->userLoggedIn()) {
 }
 
 // Filter received data
-$form = (new \App\Cars\Views\ApiForm())->getData();
+$form = (new \App\Feedbacks\Views\ApiForm())->getData();
 $filtered_input = get_form_input($form);
 validate_form($filtered_input, $form);
 
@@ -27,13 +27,13 @@ validate_form($filtered_input, $form);
 function form_success($filtered_input, $form) {
     $response = new \Core\Api\Response();
 
-    $car = new \App\Cars\Car($filtered_input);
-    $model = new \App\Cars\Model();
-    $id = $model->insert($car);
+    $feedback = new \App\Feedbacks\Feedback($filtered_input);
+    $model = new \App\Feedbacks\Model();
+    $id = $model->insert($feedback);
 
     if ($id !== false) {
-        $car->setId($id);
-        $response->setData($car->getData());
+        $feedback->setId($id);
+        $response->setData($feedback->getData());
     } else {
         $response->addError('Insert to database failed!');
     }

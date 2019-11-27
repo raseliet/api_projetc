@@ -4,14 +4,14 @@ require '../../../bootloader.php';
 
 $response = new \Core\Api\Response();
 
-$model = new App\Cars\Model();
+$model = new App\Feedbacks\Model();
 
 $conditions = $_POST ?? [];
 
-$cars = $model->get($conditions);
-if ($cars !== false) {
-    foreach ($cars as $car) {
-        $response->addData($car->getData());
+$feedbacks = $model->get($conditions);
+if ($feedbacks !== false) {
+    foreach ($feedbacks as $feedback) {
+        $response->addData($feedback->getData());
     }
 } else {
     $response->addError('Could not pull data from database!');

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Cars\Views;
+namespace App\Feedbacks\Views;
 
 class CreateForm extends BaseForm {
 

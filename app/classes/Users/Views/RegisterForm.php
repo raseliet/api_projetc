@@ -9,79 +9,121 @@ class RegisterForm extends \Core\Views\Form {
            ],
            'fields' => [
                'name' => [
-                   'label' => 'Name',
+                   'label' => 'Vardas',
                    'type' => 'text',
                   
                    'extra' => [
                        'validators' => [
                            'validate_not_empty',
-                           'validate_alphabet_only'
+                           'validate_alphabet_only',
+//                           'validate_number_range' => [
+//                               'min' => 4,
+//                               'max' => 40
+//                           ]
+                         
+                           
+                       ]
+                   ],
+                     
+               ],
+              'surname' => [
+                   'label' => 'Pavardė',
+                   'type' => 'text',
+//                   'optional' => true,
+                  
+                   'extra' => [
+                       'validators' => [
+                           'validate_not_empty',
+                           'validate_alphabet_only',
+//                           'validate_symbol',
+//                           'validate_number_range' => [
+//                               'min' => 4,
+//                               'max' => 40
+//                           ]
+                         
                            
                        ]
                    ],
                      
                ],
               
-              
                'email' => [
-                   'label' => 'Email',
+                   'label' => 'El.pašto adresas',
                    'type' => 'email',
                    'extra' => [
                        'validators' => [
                            'validate_not_empty',
-                           'validate_mail'
+//                           'validate_email'
                        ]
                    ],
                ],
                
                'password' => [
-                   'label' => 'Password',
+                   'label' => 'Slaptažodis',
                    'type' => 'password',
-                   'extra' => [
-                       'validators' => [
-                           'validate_not_empty'
-                       ]
-                   ],
-               ],
-               'password_repeat' => [
-                   'label' => 'Password repeat',
-                   'type' => 'password',
-                   'extra' => [
-                       'validators' => [
-                           'validate_not_empty'
-                       ]
-                   ],
-               ],
-               'age' => [
-                   'label' => 'Your age',
-                   'type' => 'number',
                    'extra' => [
                        'validators' => [
                            'validate_not_empty',
-//                            'validate_age',
-                            
-                           'validate_number_range' => [
-                               'min' => 18,
-                               'max' => 100
-                           ]
-                       ],
+                           
+                       ]
                    ],
-               ],
-               'gender' => [
-                   'label' => 'Gender',
-                   'type' => 'select',
-//                    Kad visada butu uždeta famale
-                   'value' => 1,
-                   'options' => [
-                       'male',
-                       'female'
+               
                    ],
+               'password_repeat' => [
+                   'label' => 'Pakartokite slaptažodį',
+                   'type' => 'password',
                    'extra' => [
                        'validators' => [
                            'validate_not_empty'
                        ]
-                   ]
-               ]
+                   ],
+               ],
+//               'age' => [
+//                   'label' => 'Your age',
+//                   'type' => 'number',
+//                   'extra' => [
+//                       'validators' => [
+//                           'validate_not_empty',
+////                            'validate_age',
+//                            
+//                           'validate_number_range' => [
+//                               'min' => 18,
+//                               'max' => 100
+//                           ]
+//                       ],
+//                   ],
+//               ],
+//               'gender' => [
+//                   'label' => 'Gender',
+//                   'type' => 'select',
+////                    Kad visada butu uždeta famale
+//                   'value' => 1,
+//                   'options' => [
+//                       'male',
+//                       'female'
+//                   ],
+//                   'extra' => [
+//                       'validators' => [
+//                           'validate_not_empty'
+//                       ]
+//                   ]
+//               ],
+               'phone' => [
+                   'label' => 'Telefono numeris',
+                    
+                   'type' => 'number',
+                   'optional' => true,
+                  
+                   'extra' => [
+                       'validators' => [
+//                           'validate_not_empty',
+   
+                         
+                           
+                       ]
+                   ],
+                     
+               ],
            ],
            'buttons' => [
                'submit' => [
@@ -97,6 +139,7 @@ class RegisterForm extends \Core\Views\Form {
            'callbacks' => [
                'success' => 'form_success',
            ],
-       ];
+               ];
+       
    }
 }

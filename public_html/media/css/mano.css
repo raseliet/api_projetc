@@ -1,4 +1,16 @@
-              
+@media (max-width: 400px) {
+    #hero {
+ height: 300px; 
+   
+}
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+
+}
+/*              
  .container {
     max-width: 548px;
 }
@@ -29,4 +41,4 @@
 }
 
 
-
+*/

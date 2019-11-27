@@ -1,1 +1,1 @@
-{"users":[{"id":null,"name":"Rasa","email":"rasa.lietuvnikaite@yahoo.com","password":"rrrrrrrr"}],"cars":{"1":{"id":1,"manufacturer":"bmw","model":"3","year":"1991"},"2":{"id":null,"manufacturer":"bmw","model":"Quatro","year":"1995"}}}
+{"users":[{"id":null,"name":"Rasa","email":"rasa.lietuvnikaite@yahoo.com","password":"rrrrrrrr"}]}

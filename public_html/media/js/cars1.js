@@ -1,10 +1,10 @@
 'use strict';
 
 const endpoints = {
-    get: 'api/cars/get.php',
-    create: 'api/cars/create.php',
-    update: 'api/cars/update.php',
-    delete: 'api/cars/delete.php'
+    get: 'api/feedbacks/get.php',
+    create: 'api/feedbacks/create.php',
+    update: 'api/feedbacks/update.php',
+    delete: 'api/feedbacks/delete.php'
 };
 
 /**
@@ -216,7 +216,7 @@ const forms = {
  */
 const table = {
     getElement: function () {
-        return document.querySelector('#cars-table tbody');
+        return document.querySelector('#feedbacks-table tbody');
     },
     init: function () {
         this.data.load();

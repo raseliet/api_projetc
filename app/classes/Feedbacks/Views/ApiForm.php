@@ -1,34 +1,34 @@
 <?php
 
-namespace App\Cars\Views;
+namespace App\Feedbacks\Views;
 
 class ApiForm extends \Core\Views\Form {
 
     public function __construct($data = []) {
         $this->data = [
             'fields' => [
-                'manufacturer' => [
+                'vardas' => [
                     'extra' => [
                         'validators' => [
                             'validate_not_empty'
                         ]
                     ]
                 ],
-                'model' => [
+                'komentaras' => [
                     'extra' => [
                         'validators' => [
                             'validate_not_empty'
                         ]
                     ]
                 ],
-                'year' => [
+                'diena' => [
                     'extra' => [
                         'validators' => [
                             'validate_not_empty',
-                            'validate_number_range' => [
-                             'min' => 1900,
-                             'max' => 2019
-                         ]
+//                            'validate_number_range' => [
+//                             'min' => 1900,
+//                             'max' => 2019
+//                         ]
                         ]
                     ]
                 ],
