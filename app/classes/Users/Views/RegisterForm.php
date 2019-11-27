@@ -16,11 +16,7 @@ class RegisterForm extends \Core\Views\Form {
                        'validators' => [
                            'validate_not_empty',
                            'validate_alphabet_only',
-//                           'validate_number_range' => [
-//                               'min' => 4,
-//                               'max' => 40
-//                           ]
-                         
+                           'validate_field_length'                        
                            
                        ]
                    ],
@@ -35,11 +31,7 @@ class RegisterForm extends \Core\Views\Form {
                        'validators' => [
                            'validate_not_empty',
                            'validate_alphabet_only',
-//                           'validate_symbol',
-//                           'validate_number_range' => [
-//                               'min' => 4,
-//                               'max' => 40
-//                           ]
+                           'validate_field_length'                        
                          
                            
                        ]
@@ -53,7 +45,7 @@ class RegisterForm extends \Core\Views\Form {
                    'extra' => [
                        'validators' => [
                            'validate_not_empty',
-//                           'validate_email'
+                           'validate_is_email'
                        ]
                    ],
                ],

@@ -26,4 +26,28 @@ function validate_mail($field_value, &$field) {
     return true;
 }
 
+function validate_is_email($field_value, &$field)
+{
+    if (!filter_var($field_value, FILTER_VALIDATE_EMAIL)) {
+        $field['error'] = 'Neteisingai įvestas el.pašto adresas!';
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+
+function validate_field_length($field_value, &$field)
+{
+    if (strlen($field_value) > 40 || $field_value === null) {
+        $field['error'] = 'Laukelis viršija 40 simbolių kiekį';
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+
 
