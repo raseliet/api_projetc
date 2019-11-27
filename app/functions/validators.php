@@ -36,8 +36,6 @@ function validate_is_email($field_value, &$field)
     }
 }
 
-
-
 function validate_field_length($field_value, &$field)
 {
     if (strlen($field_value) > 40 || $field_value === null) {
@@ -47,6 +45,31 @@ function validate_field_length($field_value, &$field)
         return true;
     }
 }
+
+//function validate_is_registered($field_value, &$field)
+//{
+//    if (!\App\App::$user_repository->load(['email' => $field_value])) {
+//        $field['error'] = 'User does not exist';
+//        return false;
+//    } else {
+//        return true;
+//    }
+//}
+//
+//function validate_email_and_password($filtered_input, &$form, $params)
+//{
+//    if (!empty($filtered_input['email'])) {
+////        $user = (\App\App::$user_repository->load(['email' => $filtered_input['email']]))[0];
+//        if (!empty($user)) {
+//            if ($user->getPassword() !== $filtered_input['password']) {
+//                $form['message'] = 'Wrong password';
+//                return false;
+//            } else {
+//                return true;
+//            }
+//        }
+//    }
+//}
 
 
 

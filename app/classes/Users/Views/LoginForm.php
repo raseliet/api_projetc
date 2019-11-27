@@ -17,7 +17,7 @@ class LoginForm extends \Core\Views\Form {
                     'extra' => [
                         'validators' => [
                             'validate_not_empty',
-                            'validate_is_email'
+                            
                         ]
                     ],
                 ],
@@ -37,7 +37,8 @@ class LoginForm extends \Core\Views\Form {
                 ],
             ],
             'validators' => [
-                'validate_login'
+                'validate_login',
+                
             ],
             'callbacks' => [
                 'success' => 'form_success',
