@@ -82,7 +82,7 @@ class RegisterForm extends \Core\Views\Form {
                 'validate_fields_match' => [
                     'password',
                     'password_repeat',
-                    'validate_is_registered'
+//                    'validate_is_registered'
                 ],
             ],
             'callbacks' => [

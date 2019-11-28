@@ -147,36 +147,53 @@ footer {
     background-image: url('../hero1.jpg');
     background-position: center;
     background-size: cover;
- 
- height: 300px; 
-   
-}
- 
-  
-.hero-content {
-  width: 100%; 
-  position: relative;
-  top: -60px;
-  left: 0px;
-/*  background: rgba(255, 255, 255, 0.24);*/
-  text-align: center;
-  padding: 0px;
+    height: 300px; 
+
 }
 
-  .taxi {
-  width: 80%; 
-  position: relative;
-  top: 100px;
-  left: -60px;
-/*  background: rgba(255, 255, 255, 0.24);*/
-  text-align: center;
-  padding: 0px;
+
+.hero-content {
+    /*  width: 100%; */
+    position: relative;
+    top: -60px;
+    left: 0px;
+    /*  background: rgba(255, 255, 255, 0.24);*/
+    text-align: center;
+    padding: 0px;
+}
+
+.taxi {
+    width: 50%; 
+    height: 80px; 
+
+    position: relative;
+    top: 100px;
+    left: 150px;
+    /*  background: rgba(255, 255, 255, 0.24);*/
+    text-align: center;
+    padding: 0px;
+}
+
+.column {
+    border: solid .5px;
+    margin: 20px 20px 20px 20px;
+}
+.h3 {
+    margin-top: 10px;
+}
+
+.map {
+    margin-top: 10px;
+    height: 300px; 
 }
 @media (max-width: 411px) {
     #hero {
- height: 150px; 
-   
-}
+        height: 150px; 
 
+    }
+    .taxi {
+        position: relative;
 
+        left: -60px;
+    }
 }

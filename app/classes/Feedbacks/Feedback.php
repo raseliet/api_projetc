@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Feedbackss;
+namespace App\Feedbacks;
 
 class Feedback {
     

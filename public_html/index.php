@@ -30,8 +30,6 @@ $footer = new \App\Views\Footer();
                 <div class="container hero-content "> 
                     <div id="hero">
 
-<!--                       <img class="img" src="https://ctl.s6img.com/society6/img/dxRjxbThdzGHObpoQYN3iJaC770/w_1500/prints/~artwork/s6-original-art-uploads/society6/uploads/misc/4a931bec8fb04edfbe319aa23a55c027/~~/nyc-taxi711289-prints.jpg
-              " alt="">-->
                         <h2 class="taxi">TAXI 24/7</h2>
                     </div>
                 </div>

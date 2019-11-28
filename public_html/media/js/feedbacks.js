@@ -141,11 +141,11 @@ const forms = {
                 if (form[data_id]) {
                     
                     // Sukuriame papildoma funkcionaluma select'ui
-                    // Ieskome tokio option'o, kurio value atitiktų iš JSON'o gautą vertę
+                    // Ieskome tokio option'o, kurio value atitiktÅ³ iÅ¡ JSON'o gautÄ… vertÄ™
                     const option = form.querySelector('option[value="' + data[data_id] + '"]');
                     if (option) {
-                        // Jeigu toks option'as buvo rastas, jo parentui (pačiam select'ui)
-                        // nustatome vertę
+                        // Jeigu toks option'as buvo rastas, jo parentui (paÄ�iam select'ui)
+                        // nustatome vertÄ™
                         option.parentNode.value = data[data_id];
                     }
                     
@@ -191,7 +191,6 @@ const forms = {
                     span.className = 'field-error';
                     span.innerHTML = errors[error_id];
                     field.parentNode.append(span);
-
                     console.log('Form error in field: ' + error_id + ':' + errors[error_id]);
                 });
             },
@@ -266,8 +265,8 @@ const table = {
             });
 
             let buttons = {
-                delete: 'Ištrinti',
-                edit: 'Redaguoti'
+                delete: 'Delete',
+                edit: 'Edit'
             };
 
             Object.keys(buttons).forEach(button_id => {
@@ -376,13 +375,5 @@ const app = {
         table.init();
     }
 };
-
 // Launch App
 app.init();
-
-
-
-
-
-
-
